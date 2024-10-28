@@ -24,12 +24,18 @@ public class ArraysCount {
     }
 
     public static void primeNumbers() {
-        int arr[] = {5, 7, 8, 9, 3, 5, 4, 2, 1, 12};
+        int[] arr = {5, 7, 8, 9, 3, 5, 4, 2, 1, 12};
         int i = 0;
         int count = 0;
         while (i < arr.length) {
-            if (arr[i] / arr[i] == 1) {
-                count++;
+            if (arr[i] > 1) {
+                float num1 = (float) arr[i] % 2;
+                float num2 = (float) arr[i] % 3;
+                if (arr[i] == 2 || arr[i] == 3) {
+                    count++;
+                } else if (num1 != 0 && num2 != 0) {
+                    count++;
+                }
             }
             i++;
         }
@@ -42,8 +48,7 @@ public class ArraysCount {
         int indexSecond = 1;
         int sum = 0;
         int result = 0;
-
-        while (indexFirst < arr.length && indexSecond < arr.length) {
+        while (indexSecond < arr.length) {
             result = sum + arr[indexFirst] + arr[indexSecond];
             sum = result;
             indexFirst = indexFirst + 2;
