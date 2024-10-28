@@ -31,7 +31,7 @@ public class ArraysCount {
             if (arr[i] > 1) {
                 float num1 = (float) arr[i] % 2;
                 float num2 = (float) arr[i] % 3;
-                if (arr[i] == 2 || arr[i] == 3) {
+                if (arr[i] <= 3) {
                     count++;
                 } else if (num1 != 0 && num2 != 0) {
                     count++;
